@@ -24,7 +24,7 @@ from app.services.downloader import (
 Base.metadata.create_all(bind=engine)
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "http://localhost", "https://yt-downloader-by-ayush.vercel.app"]}})
 
 os.makedirs("downloads", exist_ok=True)
 
